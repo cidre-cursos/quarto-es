@@ -1,0 +1,306 @@
+---
+title: "Sección 2"
+subtitle: "Markdown básico"
+format: html
+editor: visual
+---
+
+# Introducción a la sección
+
+En esta sección exploraremos los conceptos básicos de Markdown. Las lecciones de esta sección son las siguientes:
+
+-   Sintaxis básica: encabezados, formato de texto y código fuente.
+
+-   Elementos visuales en Markdown: listas, enlaces, imágenes, gráficos, tablas y vídeos.
+
+-   Ecuaciones: incluyendo ecuaciones en línea y estilo de ecuación en bloque.
+
+## Sintaxis básica
+
+En esta subsección exploraremos las formas de modificar nuestro texto y código.
+
+Los encabezados se especifican con signos de numeral. El título "Sección 2" es un encabezado de nivel 1. Sin embargo, el título "Sintaxis básica" es un encabezado de nivel 2. Ahora generaremos encabezados de nivel 3.
+
+### Formato de texto
+
+El formato de texto se puede realizar utilizando el formato de Markdown en el editor de origen y visual. Sin embargo, el editor visual ofrece más opciones de formato.
+
+-   **Texto en negrita**: utilizando **doble** **asterisco**.
+
+-   *Texto en cursiva*: utilizando un solo *asterisco*.
+
+-   ***Texto en negrita y cursiva***: utilizando triple asterisco.
+
+-   Tach~~ado~~: se puede hacer utilizando doble tilde ~~alrededor~~ del texto (símbolo \~).
+
+-   Super^índice^: podemos usar el acento circunflejo alrededor del texto en superíndice.
+
+-   Sub~índice~: esto se puede hacer utilizando un solo tilde alrededor del texto.
+
+-   Smallcaps: para smallcaps utilizamos lo que se llama un [selector]{.smallcaps} de clase CSS. Cubriremos los selectores de clase en secciones futuras.
+
+### Código fuente
+
+El código fuente se escribe con el siguiente formato:
+
+```{r}
+x <- sample(1:50, 1)
+
+y <- sample(1:50, 1)
+```
+
+Este bloque de código se llama fragmento de código. Entre llaves especificamos el lenguaje que utilizamos, en este caso R. Podemos proporcionar un nombre al fragmento:
+
+```{r FuncionSuma}
+sum2 <- function(a, b) { 
+  mysum <- a + b 
+  return(mysum) 
+}
+```
+
+También podemos crear código en línea, de modo que podamos especificar nuestros resultados en función del código que escribamos. Por lo tanto, la suma de x e y es `r sum2(x, y)`. Para ello, utilizamos la función sum2.
+
+Finalmente, podemos crear código con sintaxis, pero no se evaluará si no especificamos el lenguaje entre llaves.
+
+```         
+x <- 22 
+
+y <- 9000
+```
+
+``` r
+x <- 22 
+y <- 9000 
+sum2(x, y)
+```
+
+```{r}
+sum2(x, y)
+```
+
+Una práctica muy buena es crear los fragmentos de código utilizando el atajo de teclado CTRL + ALT + I.
+
+## Elementos visuales en Markdown
+
+En esta lección vamos a ver:
+
+-   Listas
+
+-   Enlaces
+
+-   Imágenes
+
+-   Gráficos de R
+
+-   Tablas
+
+-   Vídeos
+
+### Listas
+
+Existen dos tipos de listas:
+
+Desordenadas: utilizan símbolos.
+
+Ordenadas: utilizan elementos que llevan un orden (números, letras).
+
+Una lista desordenada puede ser la siguiente:
+
+-   Curso 1:
+
+    -   Física
+
+        -   Mecánica
+
+        -   Física cuántica
+
+    -   Matemáticas
+
+    -   Álgebra
+
+    -   Geometría
+
+    -   Estadística
+
+-   Curso 2:
+
+    -   Dendrometría
+
+    -   Hidráulica
+
+La misma lista de forma ordenada:
+
+1.  Curso 1:
+
+    i.  Física
+
+        A.  Mecánica
+
+        B.  Física cuántica
+
+    ii. Matemáticas
+
+    iii. Álgebra
+
+    iv. Geometría
+
+    v.  Estadística
+
+2.  Curso 2:
+
+    i.  Dendrometría
+
+    ii. Hidráulica
+
+### Enlaces
+
+Enlace a Quarto: https://quarto.org/
+
+<https://quarto.org/>
+
+<https://quarto.org/>
+
+<https://quarto.org/>
+
+Enlace a Quarto con etiqueta:
+
+[Quarto](https://quarto.org/ "link a quarto")
+
+### Imágenes
+
+Incluir imagen del logo de Quarto:
+
+![](Figuras/logoQuarto.png)
+
+Incluir imagen del logo de Quarto con enlace a la web:
+
+[![](Figuras/logoQuarto.png)](https://quarto.org/)
+
+Incluir imagen de Quarto alineada a la derecha con anchura 30%:
+
+![](Figuras/logoQuarto.png){width="30%" fig-align="right"}
+
+Incluir logo de Quarto y logo de Posit en 2 columnas, alineados por la parte inferior:
+
+::: {layout-ncol="2" layout-valign="bottom"}
+![Logo de Quarto](Figuras/logoQuarto.png)
+
+![Logo de Posit](Figuras/posit.png)
+:::
+
+Incluir logo de posit a través del paquete knitr:
+
+```{r}
+knitr::include_graphics('Figuras/logoQuarto.png')
+```
+
+### Gráficos
+
+Incluir un gráfico de ggplot2:
+
+```{r}
+library(ggplot2)
+data(iris)
+
+ggplot(iris, aes(Petal.Length, Sepal.Length, color = Species)) +
+  geom_point()
+```
+
+### Tablas
+
+Incluir una tabla no interactiva del dataset iris:
+
+```{r}
+library(flextable)
+
+flextable(iris)
+```
+
+Incluir una tabla interactiva del dataset iris:
+
+```{r}
+library(DT)
+datatable(iris)
+```
+
+### Vídeos
+
+Incluir un video de YouTube
+
+{{< video https://www.youtube.com/watch?v=l6rS8Dv5g-8 >}}
+
+## Ecuaciones
+
+Introducir las siguientes ecuaciones:
+
+-   Volumen de una esfera
+
+$$
+V_{esfera} = \frac{4}{3} \cdot \pi \cdot r^3
+$$
+
+-   Función Gamma
+
+$$
+\Gamma (x) = \int^{\infty}_{0} t^{x -1} e^{-t} \textbf{dt}
+$$
+
+-   Ecuación que dependa del valor de **x** e **y**
+
+$$
+w = \alpha \cdot `r round(x*0.4834, 1)` + \beta \cdot `r y`
+$$
+
+## Extra
+
+En esta lección vamos a ver:
+
+-   Line block
+
+-   Blockquote
+
+-   Tablas de Quarto
+
+-   Emojis y símbolos
+
+### Line block
+
+Pino
+
+Árbol perteneciente al género Pinus, que forma parte de la familia de las Pináceas.
+
+Los pinos son conocidos por su forma de cono y su follaje perenne en forma de agujas.
+
+| Pino
+|       Árbol perteneciente al género Pinus, que forma parte de la familia de las Pináceas.
+|       Los pinos son conocidos por su forma de cono y su follaje perenne en forma de agujas.
+
+### Blockquote
+
+Definición de pino:
+
+> Árbol perteneciente al género Pinus, que forma parte de la familia de las Pináceas. Los pinos son conocidos por su forma de cono y su follaje perenne en forma de agujas.
+
+### Tablas de Quarto
+
+| Especies 🌲       | Acículas 🍃 | Tamaño de piña 🍍 |
+|-------------------|:-----------:|-------------------|
+| Pinus pinaster    |      2      | Grande            |
+| Pinus canariensis |      3      | Pequeña           |
+| Pinus pinea       |      2      | Grande            |
+
+: Especies de pinos
+
+### Emojis y símbolos
+
+Adrián
+
+Pedro
+
+Paco
+
+\
+
+Laura
+
+Miriam
