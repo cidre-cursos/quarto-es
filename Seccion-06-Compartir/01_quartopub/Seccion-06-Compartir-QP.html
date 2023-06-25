@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Adrián Cidre González">
-<meta name="dcterms.date" content="2023-06-24">
+<meta name="dcterms.date" content="2023-06-25">
 
 <title>Analysis of summer 2022 wildfires blast in Folgoso do Courel, Spain</title>
 <style>
@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">June 24, 2023</p>
+      <p class="date">June 25, 2023</p>
     </div>
   </div>
   
@@ -172,6 +172,91 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">p_load</span>(sf, here, terra, geodata, tidyverse, ggspatial, mapview, elevatr,</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       rasterVis, tidyterra, cptcity, RColorBrewer, spatialEco, report,</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>       lubridate, RStoolbox, flextable, leafpop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>package 'here' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'geodata' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'slippymath' successfully unpacked and MD5 sums checked
+package 'elevatr' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'tidyterra' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'cptcity' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'misc3d' successfully unpacked and MD5 sums checked
+package 'Formula' successfully unpacked and MD5 sums checked
+package 'MatrixModels' successfully unpacked and MD5 sums checked
+package 'TH.data' successfully unpacked and MD5 sums checked
+package 'sandwich' successfully unpacked and MD5 sums checked
+package 'checkmate' successfully unpacked and MD5 sums checked
+package 'spData' successfully unpacked and MD5 sums checked
+package 'kernlab' successfully unpacked and MD5 sums checked
+package 'mclust' successfully unpacked and MD5 sums checked
+package 'multicool' successfully unpacked and MD5 sums checked
+package 'mvtnorm' successfully unpacked and MD5 sums checked
+package 'plot3D' successfully unpacked and MD5 sums checked
+package 'pracma' successfully unpacked and MD5 sums checked
+package 'bitops' successfully unpacked and MD5 sums checked
+package 'Hmisc' successfully unpacked and MD5 sums checked
+package 'quantreg' successfully unpacked and MD5 sums checked
+package 'SparseM' successfully unpacked and MD5 sums checked
+package 'polspline' successfully unpacked and MD5 sums checked
+package 'multcomp' successfully unpacked and MD5 sums checked
+package 'htmlTable' successfully unpacked and MD5 sums checked
+package 'nortest' successfully unpacked and MD5 sums checked
+package 'fastmatrix' successfully unpacked and MD5 sums checked
+package 'spdep' successfully unpacked and MD5 sums checked
+package 'ks' successfully unpacked and MD5 sums checked
+package 'RCurl' successfully unpacked and MD5 sums checked
+package 'RANN' successfully unpacked and MD5 sums checked
+package 'rms' successfully unpacked and MD5 sums checked
+package 'yaImpute' successfully unpacked and MD5 sums checked
+package 'EnvStats' successfully unpacked and MD5 sums checked
+package 'SpatialPack' successfully unpacked and MD5 sums checked
+package 'spatialEco' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'bayestestR' successfully unpacked and MD5 sums checked
+package 'effectsize' successfully unpacked and MD5 sums checked
+package 'insight' successfully unpacked and MD5 sums checked
+package 'parameters' successfully unpacked and MD5 sums checked
+package 'performance' successfully unpacked and MD5 sums checked
+package 'datawizard' successfully unpacked and MD5 sums checked
+package 'report' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages
+package 'triebeard' successfully unpacked and MD5 sums checked
+package 'xtable' successfully unpacked and MD5 sums checked
+package 'sourcetools' successfully unpacked and MD5 sums checked
+package 'urltools' successfully unpacked and MD5 sums checked
+package 'httpcode' successfully unpacked and MD5 sums checked
+package 'shiny' successfully unpacked and MD5 sums checked
+package 'crul' successfully unpacked and MD5 sums checked
+package 'fontBitstreamVera' successfully unpacked and MD5 sums checked
+package 'fontLiberation' successfully unpacked and MD5 sums checked
+package 'zip' successfully unpacked and MD5 sums checked
+package 'gfonts' successfully unpacked and MD5 sums checked
+package 'fontquiver' successfully unpacked and MD5 sums checked
+package 'officer' successfully unpacked and MD5 sums checked
+package 'gdtools' successfully unpacked and MD5 sums checked
+package 'flextable' successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+    C:\Users\Usuario\AppData\Local\Temp\Rtmp2BUeEw\downloaded_packages</code></pre>
+</div>
 </div>
 <p><br></p>
 </section>
@@ -179,35 +264,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="2.2" class="anchored" data-anchor-id="sec-aoi"><span class="header-section-number">2.2</span> Study area</h3>
 <p>The selected study area is the subregion of Folgoso de Courel (Galicia) which was severely affected by wildfires.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download spanish level 4 boundaries</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>spain <span class="ot">&lt;-</span> <span class="fu">gadm</span>(<span class="at">country =</span> <span class="st">'ESP'</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">level =</span> <span class="dv">4</span>,</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">path =</span> <span class="fu">here</span>(<span class="st">'inputs/'</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">resolution =</span> <span class="dv">2</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter study area</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>aoi <span class="ot">&lt;-</span> spain <span class="sc">|&gt;</span> </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NAME_4 <span class="sc">==</span> <span class="st">'Folgoso do Courel'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download spanish level 4 boundaries</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>spain <span class="ot">&lt;-</span> <span class="fu">gadm</span>(<span class="at">country =</span> <span class="st">'ESP'</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">level =</span> <span class="dv">4</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">path =</span> <span class="fu">here</span>(<span class="st">'inputs/'</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">resolution =</span> <span class="dv">2</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter study area</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>aoi <span class="ot">&lt;-</span> spain <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_as_sf</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(NAME_4 <span class="sc">==</span> <span class="st">'Folgoso do Courel'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>In <a href="#fig-aoi">Fig.&nbsp;1</a> we can see the location of the study area. Setting on the <em>Esri.WorldImagery</em> map, we can see that the region is very montanious, and mostly covered by forests.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapview</span>(aoi,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">viewer.suppress =</span> <span class="fu">mapviewGetOption</span>(<span class="st">"viewer.suppress"</span>),</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">'red'</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">3</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">alpha.regions =</span> <span class="dv">0</span>,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">'Folgoso do Courel'</span>,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend =</span> <span class="cn">FALSE</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mapview</span>(aoi,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">viewer.suppress =</span> <span class="fu">mapviewGetOption</span>(<span class="st">"viewer.suppress"</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">'red'</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">lwd =</span> <span class="dv">3</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">alpha.regions =</span> <span class="dv">0</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">label =</span> <span class="st">'Folgoso do Courel'</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-aoi" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-2af099fc508f931812c2" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-2af099fc508f931812c2">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["polygon",420]},{"method":"addPolygons","args":[[[[{"lng":[-7.0479,-7.0457,-7.047,-7.0454,-7.05,-7.0442,-7.0347,-7.034,-7.0451,-7.0456,-7.0484,-7.0546,-7.057,-7.0558,-7.0626,-7.07,-7.0661,-7.0698,-7.0732,-7.0736,-7.0706,-7.0717,-7.0752,-7.0861,-7.0932,-7.0995,-7.1057,-7.1082,-7.1152,-7.1196,-7.1277,-7.1331,-7.1441,-7.1558,-7.175,-7.1816,-7.1986,-7.2129,-7.2226,-7.2311,-7.2338,-7.2382,-7.2547,-7.2547,-7.2594,-7.2707,-7.2867,-7.2889,-7.2948,-7.2971,-7.2899,-7.2911,-7.2945,-7.2861,-7.2734,-7.2758,-7.2736,-7.2683,-7.2641,-7.2634,-7.2647,-7.2741,-7.2802,-7.2827,-7.2855,-7.2804,-7.2782,-7.2756,-7.263,-7.2566,-7.2397,-7.2308,-7.2303,-7.2262,-7.2163,-7.1884,-7.1832,-7.1816,-7.1876,-7.1895,-7.1831,-7.1792,-7.1782,-7.1711,-7.1599,-7.153,-7.1415,-7.1356,-7.1289,-7.1285,-7.1226,-7.1221,-7.1232,-7.1267,-7.1313,-7.1316,-7.128,-7.1294,-7.1232,-7.124,-7.1143,-7.106,-7.1037,-7.096,-7.0882,-7.0821,-7.0805,-7.085,-7.0846,-7.0813,-7.0778,-7.0753,-7.0644,-7.0479],"lat":[42.626,42.6222,42.6123,42.6042,42.5979,42.5895,42.5873,42.5841,42.577,42.5743,42.5725,42.5716,42.5643,42.5597,42.5527,42.5594,42.5754,42.5803,42.582,42.5839,42.5865,42.5899,42.5894,42.5932,42.605,42.6057,42.6037,42.6013,42.6016,42.595,42.5949,42.5923,42.5785,42.5795,42.5752,42.563,42.5591,42.5455,42.5406,42.5398,42.5322,42.5301,42.5304,42.529,42.5267,42.5242,42.5299,42.5326,42.5325,42.535,42.5377,42.5429,42.547,42.5497,42.5592,42.5654,42.5647,42.5679,42.5738,42.578,42.5833,42.5943,42.5973,42.6062,42.6081,42.6072,42.6107,42.6102,42.6034,42.6063,42.6369,42.647,42.6515,42.6578,42.6683,42.6778,42.6826,42.6858,42.6872,42.6904,42.6994,42.7008,42.7049,42.7085,42.6973,42.6992,42.6992,42.6938,42.6906,42.6853,42.6817,42.6794,42.6745,42.671,42.6719,42.6694,42.6668,42.664,42.6581,42.6558,42.6536,42.6583,42.6575,42.65,42.6494,42.6468,42.6447,42.639,42.6368,42.6321,42.6328,42.6277,42.6285,42.626]}]]],null,"aoi",{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"pane":"polygon","stroke":true,"color":"#FF0000","weight":3,"opacity":0.9,"fill":true,"fillColor":"#6666FF","fillOpacity":0,"smoothFactor":1,"noClip":false},"<div class='scrollableContainer'><table class=mapview-popup id='popup'><tr class='coord'><td><\/td><th><b>Feature ID&emsp;<\/b><\/th><td>1&emsp;<\/td><\/tr><tr><td>1<\/td><th>GID_4&emsp;<\/th><td>ESP.12.2.1.5_1&emsp;<\/td><\/tr><tr><td>2<\/td><th>GID_0&emsp;<\/th><td>ESP&emsp;<\/td><\/tr><tr><td>3<\/td><th>COUNTRY&emsp;<\/th><td>Spain&emsp;<\/td><\/tr><tr><td>4<\/td><th>GID_1&emsp;<\/th><td>ESP.12_1&emsp;<\/td><\/tr><tr><td>5<\/td><th>NAME_1&emsp;<\/th><td>Galicia&emsp;<\/td><\/tr><tr><td>6<\/td><th>GID_2&emsp;<\/th><td>ESP.12.2_1&emsp;<\/td><\/tr><tr><td>7<\/td><th>NAME_2&emsp;<\/th><td>Lugo&emsp;<\/td><\/tr><tr><td>8<\/td><th>GID_3&emsp;<\/th><td>ESP.12.2.1_1&emsp;<\/td><\/tr><tr><td>9<\/td><th>NAME_3&emsp;<\/th><td>n.a. (169)&emsp;<\/td><\/tr><tr><td>10<\/td><th>NAME_4&emsp;<\/th><td>Folgoso do Courel&emsp;<\/td><\/tr><tr><td>11<\/td><th>VARNAME_4&emsp;<\/th><td>Folgoso de Caurel&emsp;<\/td><\/tr><tr><td>12<\/td><th>TYPE_4&emsp;<\/th><td>Municipality&emsp;<\/td><\/tr><tr><td>13<\/td><th>ENGTYPE_4&emsp;<\/th><td>Municipality&emsp;<\/td><\/tr><tr><td>14<\/td><th>CC_4&emsp;<\/th><td>NA&emsp;<\/td><\/tr><tr><td>15<\/td><th>geometry&emsp;<\/th><td>sfc_POLYGON&emsp;<\/td><\/tr><\/table><\/div>",{"maxWidth":800,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"closeOnClick":true,"className":""},"Folgoso do Courel",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"stroke":true,"weight":5,"opacity":0.9,"fillOpacity":0,"bringToFront":false,"sendToBack":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-7.2971,42.5242,-7.034,42.7085,true,"aoi","Zoom to aoi","<strong> aoi <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],"aoi",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"limits":{"lat":[42.5242,42.7085],"lng":[-7.2971,-7.034]},"fitBounds":[42.5242,-7.2971,42.7085,-7.034,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-09e9e6a040c9d28edfd4" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-09e9e6a040c9d28edfd4">{"x":{"options":{"minZoom":1,"maxZoom":52,"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"preferCanvas":false,"bounceAtZoomLimits":false,"maxBounds":[[[-90,-370]],[[90,370]]]},"calls":[{"method":"addProviderTiles","args":["CartoDB.Positron","CartoDB.Positron","CartoDB.Positron",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["CartoDB.DarkMatter","CartoDB.DarkMatter","CartoDB.DarkMatter",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenStreetMap","OpenStreetMap","OpenStreetMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["Esri.WorldImagery","Esri.WorldImagery","Esri.WorldImagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"addProviderTiles","args":["OpenTopoMap","OpenTopoMap","OpenTopoMap",{"errorTileUrl":"","noWrap":false,"detectRetina":false,"pane":"tilePane"}]},{"method":"createMapPane","args":["polygon",420]},{"method":"addPolygons","args":[[[[{"lng":[-7.0479,-7.0457,-7.047,-7.0454,-7.05,-7.0442,-7.0347,-7.034,-7.0451,-7.0456,-7.0484,-7.0546,-7.057,-7.0558,-7.0626,-7.07,-7.0661,-7.0698,-7.0732,-7.0736,-7.0706,-7.0717,-7.0752,-7.0861,-7.0932,-7.0995,-7.1057,-7.1082,-7.1152,-7.1196,-7.1277,-7.1331,-7.1441,-7.1558,-7.175,-7.1816,-7.1986,-7.2129,-7.2226,-7.2311,-7.2338,-7.2382,-7.2547,-7.2547,-7.2594,-7.2707,-7.2867,-7.2889,-7.2948,-7.2971,-7.2899,-7.2911,-7.2945,-7.2861,-7.2734,-7.2758,-7.2736,-7.2683,-7.2641,-7.2634,-7.2647,-7.2741,-7.2802,-7.2827,-7.2855,-7.2804,-7.2782,-7.2756,-7.263,-7.2566,-7.2397,-7.2308,-7.2303,-7.2262,-7.2163,-7.1884,-7.1832,-7.1816,-7.1876,-7.1895,-7.1831,-7.1792,-7.1782,-7.1711,-7.1599,-7.153,-7.1415,-7.1356,-7.1289,-7.1285,-7.1226,-7.1221,-7.1232,-7.1267,-7.1313,-7.1316,-7.128,-7.1294,-7.1232,-7.124,-7.1143,-7.106,-7.1037,-7.096,-7.0882,-7.0821,-7.0805,-7.085,-7.0846,-7.0813,-7.0778,-7.0753,-7.0644,-7.0479],"lat":[42.626,42.6222,42.6123,42.6042,42.5979,42.5895,42.5873,42.5841,42.577,42.5743,42.5725,42.5716,42.5643,42.5597,42.5527,42.5594,42.5754,42.5803,42.582,42.5839,42.5865,42.5899,42.5894,42.5932,42.605,42.6057,42.6037,42.6013,42.6016,42.595,42.5949,42.5923,42.5785,42.5795,42.5752,42.563,42.5591,42.5455,42.5406,42.5398,42.5322,42.5301,42.5304,42.529,42.5267,42.5242,42.5299,42.5326,42.5325,42.535,42.5377,42.5429,42.547,42.5497,42.5592,42.5654,42.5647,42.5679,42.5738,42.578,42.5833,42.5943,42.5973,42.6062,42.6081,42.6072,42.6107,42.6102,42.6034,42.6063,42.6369,42.647,42.6515,42.6578,42.6683,42.6778,42.6826,42.6858,42.6872,42.6904,42.6994,42.7008,42.7049,42.7085,42.6973,42.6992,42.6992,42.6938,42.6906,42.6853,42.6817,42.6794,42.6745,42.671,42.6719,42.6694,42.6668,42.664,42.6581,42.6558,42.6536,42.6583,42.6575,42.65,42.6494,42.6468,42.6447,42.639,42.6368,42.6321,42.6328,42.6277,42.6285,42.626]}]]],null,"aoi",{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"pane":"polygon","stroke":true,"color":"#FF0000","weight":3,"opacity":0.9,"fill":true,"fillColor":"#6666FF","fillOpacity":0,"smoothFactor":1,"noClip":false},"<div class='scrollableContainer'><table class=mapview-popup id='popup'><tr class='coord'><td><\/td><th><b>Feature ID&emsp;<\/b><\/th><td>1&emsp;<\/td><\/tr><tr><td>1<\/td><th>GID_4&emsp;<\/th><td>ESP.12.2.1.5_1&emsp;<\/td><\/tr><tr><td>2<\/td><th>GID_0&emsp;<\/th><td>ESP&emsp;<\/td><\/tr><tr><td>3<\/td><th>COUNTRY&emsp;<\/th><td>Spain&emsp;<\/td><\/tr><tr><td>4<\/td><th>GID_1&emsp;<\/th><td>ESP.12_1&emsp;<\/td><\/tr><tr><td>5<\/td><th>NAME_1&emsp;<\/th><td>Galicia&emsp;<\/td><\/tr><tr><td>6<\/td><th>GID_2&emsp;<\/th><td>ESP.12.2_1&emsp;<\/td><\/tr><tr><td>7<\/td><th>NAME_2&emsp;<\/th><td>Lugo&emsp;<\/td><\/tr><tr><td>8<\/td><th>GID_3&emsp;<\/th><td>ESP.12.2.1_1&emsp;<\/td><\/tr><tr><td>9<\/td><th>NAME_3&emsp;<\/th><td>n.a. (169)&emsp;<\/td><\/tr><tr><td>10<\/td><th>NAME_4&emsp;<\/th><td>Folgoso do Courel&emsp;<\/td><\/tr><tr><td>11<\/td><th>VARNAME_4&emsp;<\/th><td>Folgoso de Caurel&emsp;<\/td><\/tr><tr><td>12<\/td><th>TYPE_4&emsp;<\/th><td>Municipality&emsp;<\/td><\/tr><tr><td>13<\/td><th>ENGTYPE_4&emsp;<\/th><td>Municipality&emsp;<\/td><\/tr><tr><td>14<\/td><th>CC_4&emsp;<\/th><td>NA&emsp;<\/td><\/tr><tr><td>15<\/td><th>geometry&emsp;<\/th><td>sfc_POLYGON&emsp;<\/td><\/tr><\/table><\/div>",{"maxWidth":800,"minWidth":50,"autoPan":true,"keepInView":false,"closeButton":true,"closeOnClick":true,"className":""},"Folgoso do Courel",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},{"stroke":true,"weight":5,"opacity":0.9,"fillOpacity":0,"bringToFront":false,"sendToBack":false}]},{"method":"addScaleBar","args":[{"maxWidth":100,"metric":true,"imperial":true,"updateWhenIdle":true,"position":"bottomleft"}]},{"method":"addHomeButton","args":[-7.2971,42.5242,-7.034,42.7085,true,"aoi","Zoom to aoi","<strong> aoi <\/strong>","bottomright"]},{"method":"addLayersControl","args":[["CartoDB.Positron","CartoDB.DarkMatter","OpenStreetMap","Esri.WorldImagery","OpenTopoMap"],"aoi",{"collapsed":true,"autoZIndex":true,"position":"topleft"}]}],"limits":{"lat":[42.5242,42.7085],"lng":[-7.2971,-7.034]},"fitBounds":[42.5242,-7.2971,42.7085,-7.034,[]]},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\n      'position': 'relative',\n      'bottomleft':  '0px',\n      'background-color': 'rgba(255, 255, 255, 0.7)',\n      'box-shadow': '0 0 2px #bbb',\n      'background-clip': 'padding-box',\n      'margin': '0',\n      'padding-left': '5px',\n      'color': '#333',\n      'font': '9px/1.5 \"Helvetica Neue\", Arial, Helvetica, sans-serif',\n      'z-index': '700',\n      });\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null},{"code":"function(el, x, data) {\n  return (function(el,x,data){\n           var map = this;\n\n           map.on('keypress', function(e) {\n               console.log(e.originalEvent.code);\n               var key = e.originalEvent.code;\n               if (key === 'KeyE') {\n                   var bb = this.getBounds();\n                   var txt = JSON.stringify(bb);\n                   console.log(txt);\n\n                   setClipboardText('\\'' + txt + '\\'');\n               }\n           })\n        }).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
 <figcaption class="figure-caption">Fig.&nbsp;1: Location of the study area (Folgoso do Courel, Galicia)</figcaption>
 </figure>
 </div>
@@ -215,24 +300,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><br></p>
 <p>We can illustrate this by plotting the slope of the study area. To do so, we can download the DEM with the next chnuk of code, and compute the slope with the <code>terra::terrain()</code> function.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the DEM</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dem <span class="ot">&lt;-</span> <span class="fu">get_elev_raster</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">locations =</span> aoi,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">z =</span> <span class="dv">14</span>,</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">clip =</span> <span class="st">"bbox"</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rast</span>()</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the slope</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">terrain</span>(dem, <span class="at">v =</span> <span class="st">'slope'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the DEM</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dem <span class="ot">&lt;-</span> <span class="fu">get_elev_raster</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">locations =</span> aoi,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">z =</span> <span class="dv">14</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">clip =</span> <span class="st">"bbox"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rast</span>()</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute the slope</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>slope <span class="ot">&lt;-</span> <span class="fu">terrain</span>(dem, <span class="at">v =</span> <span class="st">'slope'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Next, a graphical representation of the DEM and the slope is presented in <a href="#fig-dem">Fig.&nbsp;2</a> and <a href="#fig-slope">Fig.&nbsp;3</a>, respectively.</p>
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'RdYlBu'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dem, <span class="at">col =</span> pal, <span class="at">main =</span> <span class="st">'DEM'</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(slope, <span class="at">col =</span> pal, <span class="at">main =</span> <span class="st">'Slope'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">brewer.pal</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">name =</span> <span class="st">'RdYlBu'</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dem, <span class="at">col =</span> pal, <span class="at">main =</span> <span class="st">'DEM'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(slope, <span class="at">col =</span> pal, <span class="at">main =</span> <span class="st">'Slope'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
